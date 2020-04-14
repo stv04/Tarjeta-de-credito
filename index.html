@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tarjeta de credito</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		@font-face {
+			font-family: 'tarjeta';
+			src: url('src/halterp_.ttf')
+			format('truetype');
+		}
+
+		body {
+			background-image: linear-gradient(rgba(250, 250, 250, 0.3), rgba(250,250,250, 0.3)), url('src/fondo.jpg');
+			font-size: 1.22em;
+			background-attachment: fixed;
+		}
+		p {
+			padding: 4px;
+			text-shadow: 1px 1px 1px gray;
+		}
+
+		.datos{
+			width: 40%; 
+			height: 200px;
+			box-shadow: 5px 6px 6px black;
+			text-align: center; 
+			margin:20px;
+			background-color: rgba(200, 200, 230, 0.5);
+		}
+
+		input{
+			background-color: transparent;
+			font-size: 1.1em;
+			width: 80%;
+			text-align: center;
+		}
+
+		input[type='button']{
+			font-size: 1.1em;
+			background-color: rgba(100, 0, 250, 0.3);
+			border-radius: 10px;
+			color: white;
+		}
+
+		input[value='x']{
+			width: 30px;
+		}
+
+		h4{
+			text-shadow: 1px 1px 0px lightgrey, 1px 1px 0px lightgrey, 1px 1px 0px lightgrey, 1px 1px 0px lightgrey, 0px 1px 1px lightgrey, 0px 1px 1px lightgrey, 0px 1px 1px lightgrey, 2px 2px 0px grey;
+			font-weight: 100;
+		}
+
+	</style>
+</head>
+<body>
+	<h1>Chequea tu Número de tarjeta</h1>
+		<p>Si quieres verificar que el número de tu tarjeta de crédito es válido, puedes ingresarlo a continuación. Si no tienes tarjeta de credito, y quieres verificar que funcione, puedes intentar crearte una a tu nombre. <br>
+		Puedes optar aleatoriamente por una Visa, una Master Card o una American Express.<br>
+		La tarjeta creada no es real, no puedes ingresar dinero en ella y solo puede ser utilizada para fines prácticos.
+		</p>
+		<div style="display: flex; justify-content:space-around;">
+		<div style=" " class="datos">
+			<article style="width: 40%; height: 200px; position: absolute; background-color: white; display: none" id="mensaje">
+				<p id="msj"></p>
+				<input type="button" name="cerrar_ventana" value="x" style="text-align: width: 30px; height: 30px; border-radius: 20px; float: right;" onclick="cerrar_ventana()">
+			</article>
+			<h3 style="margin-top: 5px;">Verificador</h3>
+			<p>Ingresa el número que quieres verificar</p>
+			<input type="integer" name="numero" maxlength="16" placeholder="1234567812345678" id="numero" width="auto"><br><br>
+			<input type="button" name="verificador" value="Verificar" onclick="verificadorDeTarjeta()">
+			
+		</div>
+
+		<form name="form" method="post" class="datos">
+
+			<p>Ingresa tu nombre antes de crear tu tarjeta</p>
+			<input type="text" name="nombre" id="nombre" placeholder="Nombre A." required><br><br>
+			<input type="button" name="Generador" value="Crear tarjeta" onclick="generadorDeTarjeta()">
+		</form>
+		</div>
+	<div id="tarjetaCreada" style="display: flex; justify-content: center; flex-wrap: wrap; font-family: 'tarjeta';"></div>
+	<script type="text/javascript" src="main.js"></script>
+</body>
+</html>
